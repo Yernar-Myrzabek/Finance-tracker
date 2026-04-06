@@ -1,0 +1,227 @@
+:root {
+    --background: #0f0f13;
+    --card: #1a1a2e;
+    --accent: #6c63ff;
+    --income: #00d4aa;
+    --expense: #ff6b6b;
+    --text: #ffffff;
+    --text-secondary: #8892a4;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--background);
+    color:var(--text);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.header{
+    background: var(--card);
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    margin-bottom:30px;
+    box-shadow: 0 8px 32px rgba(108, 99, 255, 0.2);
+}
+.header h1{
+    font-size:1.5rem;
+    color:var(--text-secondary);
+    margin-bottom:10px;
+
+}
+.balance {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+.form-section {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.form-section h2 {
+    margin-bottom: 20px;
+    color: var(--text);
+}
+.form-section input,
+.form-section select {
+    width: 100%;
+    padding: 12px 16px;
+    background: #252540;
+    border: 1px solid #333355;
+    border-radius: 10px;
+    outline: none;
+    color: var(--text);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+.form-section input:focus,
+.form-section select:focus {
+    border-color: var(--accent);
+}
+.form-section button {
+    width: 100%;
+    padding: 14px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.5s;
+}
+.form-section button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+
+.transaction-section {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.transaction-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: #252540;
+    transition: transform 0.2s;
+    border-left: 3px solid transparent;
+}
+
+.transaction-item:hover {
+    transform: translateX(5px);
+}
+
+.transaction-item.income {
+    border-left-color: var(--income);
+}
+
+.transaction-item.expense {
+    border-left-color: var(--expense);
+}
+
+.transaction-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.transaction-title {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.transaction-meta {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.transaction-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.amount-income {
+    color: var(--income);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.amount-expense {
+    color: var(--expense);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.balance-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.balance-card {
+    background: #252540;
+    border-radius: 12px;
+    padding: 15px 30px;
+    flex: 1;
+}
+
+.balance-card p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+}
+#transactionList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 50px;
+}
+
+#totalIncome {
+    color: var(--income);
+    text-shadow: 0 0 10px rgba(0, 212, 170, 0.2);
+}
+
+#totalExpense {
+    color: var(--expense);
+    text-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
+}
+
+#totalBalance {
+    transition: all 0.3s ease;
+}
+.balance-card h3 {
+    font-size: 1.3rem;
+}
+
+.income-card h3 { color: var(--income); }
+.expense-card h3 { color: var(--expense); }
+.delete-btn {
+    background: transparent;
+    border: 1px solid #ff6b6b44;
+    color: var(--expense);
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: background 0.2s;
+}
+
+.delete-btn:hover {
+    background: #ff6b6b22;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 40px;
+    font-size: 1rem;
+}
